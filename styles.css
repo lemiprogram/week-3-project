@@ -13,6 +13,21 @@ svg{
     width: 25px;
     display: none;
 }
+svg:hover + nav{
+    display: block;
+    position: absolute;
+    top: calc(50% + 12px);
+    right:0%;
+    width: 100%;
+    background: linear-gradient(to right, #a9a7a7, #353535);
+    transition: 1s;
+
+    
+}
+svg:hover + nav ul{
+    flex-direction: column;
+    text-align: center;
+}
 header{
     background: linear-gradient(to right, #a9a7a7, #353535);
     padding: 10px 20px;
@@ -21,11 +36,12 @@ header{
     display: flex;
     justify-content: space-between;
     position: fixed;
-}
     
+}
+
 header h2{
     color: #000;
-
+    
 }
 nav{
     padding-right: 15px;
@@ -58,4 +74,35 @@ section{
     background: linear-gradient(45deg, #a9a7a7, #353535);
     background-repeat: no-repeat; 
     background-size:cover;
+}
+.about-section, .contact-section{
+    background: linear-gradient(135deg, #a9a7a7, #353535);
+    
+}
+@media only screen and (max-width:700px) {
+    svg{
+        display: block;
+    }
+    header nav{
+        display: none;
+    }
+    nav:hover{
+        
+        display: block;
+        position: absolute;
+        top: calc(50% + 12px);
+        right:0%;
+        width: 100%;
+        background: linear-gradient(to right, #a9a7a7, #353535);
+
+    }
+    nav:hover ul{
+        flex-direction: column;
+        text-align: center;
+    } 
+    nav:hover ul li a{
+        display:block;
+        padding-bottom: 10px;
+    } 
+
 }
