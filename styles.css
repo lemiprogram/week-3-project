@@ -9,24 +9,39 @@ body{
     
     min-height: 100vh;
 }
+button{
+    margin-inline:auto;
+    min-width: none;
+    padding: 10px;
+    background-color: #000;
+    border: none;
+    color: #a9a7a7;
+    border-radius: 9%;
+}
 svg{
     width: 25px;
     display: none;
 }
 svg:hover + nav{
     display: block;
+    background: linear-gradient(to right, #a9a7a7, #353535);
     position: absolute;
-    top: calc(50% + 12px);
+    top: calc(0%);
+    z-index: 2;
     right:0%;
     width: 100%;
-    background: linear-gradient(to right, #a9a7a7, #353535);
-    transition: 1s;
+    padding-bottom: 20px;
 
     
 }
 svg:hover + nav ul{
-    flex-direction: column;
     text-align: center;
+    justify-content: end;
+    flex-direction: row-reverse;
+    
+}
+svg:hover + nav ul li a{
+    color: #353535;
 }
 header{
     background: linear-gradient(to right, #a9a7a7, #353535);
@@ -35,12 +50,14 @@ header{
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    position: fixed;
     
 }
 
 header h2{
     color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.6em;
+    
     
 }
 nav{
@@ -50,59 +67,126 @@ nav ul{
     display: flex;
     gap: 40px;
 }
-nav ul li {
+ul li {
     list-style-type: none;
     font-weight: bold;
 }
-nav ul li a{
+ ul li a{
     text-decoration: none;
     color: #b9b6b6;
     
 }
-nav ul li a:hover{
+ ul li a:hover{
     color: #fff;
     transition: 1s;
 }
-nav ul li a:not(:hover){
+    ul li a:not(:hover){
     color: #b9b6b6;
     transition: 1.5s;
     font-size: 0.8em;
 }
-section{
-    width: 100%;
-    height: calc(100vh - 50px);
-    background: linear-gradient(45deg, #a9a7a7, #353535);
-    background-repeat: no-repeat; 
-    background-size:cover;
-}
-.about-section, .contact-section{
-    background: linear-gradient(135deg, #a9a7a7, #353535);
+h3{
+    font-size: 1.15em;
     
+
+}
+
+p{  
+    color: #353535;
+    font-size: 1.05em;
+    width: 450px;
+}
+img{
+    width: 18px;
+}
+
+main section{
+    background: linear-gradient(45deg, #a9a7a7, #353535);
+    background-repeat: no-repeat;    
+    background-size:cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 30px;
+}
+footer{
+    background: linear-gradient(to right, #646464,#7b7a7a, #5e5d5d);
+
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-evenly ;
+    text-align: center;
+}
+.contacts p,.contacts h3, .about h3, .quick-links h3{
+    color: #494949;
+}
+.contacts p{
+    font-size:0.8rem  ;
+
+}
+.skills-section{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    gap: 0.7vw ;
+}
+.skills-section .skills-card img{
+    width: 200px;
+}
+.skills-card{
+    min-width: 400px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    box-shadow: 2px 2px 2px 2px #353535; 
+    border-radius: 20px;
+}
+.skill-info h4, .skill-info p {
+    display: inline;
+}
+@media only screen and (min-width:100){
+
 }
 @media only screen and (max-width:700px) {
     svg{
         display: block;
-    }
+    } 
     header nav{
         display: none;
     }
     nav:hover{
         
+        background: linear-gradient(to right, #a9a7a7, #353535);
+        width: 100%;
         display: block;
         position: absolute;
-        top: calc(50% + 12px);
+        top: calc(0%);
+
         right:0%;
-        width: 100%;
-        background: linear-gradient(to right, #a9a7a7, #353535);
+        /* 
+         */
 
     }
     nav:hover ul{
-        flex-direction: column;
         text-align: center;
+        justify-content: end;
+        padding: 10px;
+        flex-direction: row-reverse;
     } 
     nav:hover ul li a{
         display:block;
-        padding-bottom: 10px;
     } 
-
+    
+    p{
+        width: 450px;
+    }
+    .contact-span{
+        display: none;
+    }
+}
+html{
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 }
